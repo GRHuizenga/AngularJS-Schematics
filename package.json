@@ -2,8 +2,8 @@
   "name": "angularjs-schematics",
   "version": "1.0.0",
   "description": "AngularJS Schematics, a generator for AngularJS components",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "tsc",
@@ -16,11 +16,12 @@
     "postversion": "git push && git push --tags"
   },
   "files": [
-    "lib/**/*.js",
-    "lib/templates/component"
+    "dist/**/*.js",
+    "dist/templates/component.html",
+    "dist/templates/component.ts"
   ],
   "bin": {
-    "ngjs": "./lib/ngjs.js"
+    "ngjs": "./dist/ngjs.js"
   },
   "repository": {
     "type": "git",

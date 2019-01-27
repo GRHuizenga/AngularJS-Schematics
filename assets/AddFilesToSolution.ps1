@@ -1,6 +1,6 @@
 ﻿#Taken from: https://stackoverflow.com/questions/17382308/include-file-in-project-from-command-line
 #CALLED LIKE: powershell -File C:\AddExistingItem.ps1 -solutionPath "C:\Test.sln" -projectName "TestAddItem" -item "C:\Test.txt"
-param([String]$solutionPath, [String]$projectName, [String[]]$items)
+param([String]$solutionPath, [String]$projectName, [String[]]$items, [string]$folder)
 
 #BEGIN: section can be removed if executing from within a PowerShell window
 $source = @" 
@@ -107,6 +107,11 @@ $IDE = New-Object -ComObject VisualStudio.DTE.15.0
 $IDE.Solution.Open("$solutionPath")
 
 $project = $IDE.Solution.Projects | ? { $_.Name -eq "$projectName" }
+
+if ($folder -ne '') {
+    $project.ProjectItems.AddFilter($folder) | Out-Null
+}
+
 $items | foreach {
     $project.ProjectItems.AddFromFile("$_") | Out-Null
 }

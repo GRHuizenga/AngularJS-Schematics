@@ -1,1 +1,0 @@
-<p>%ComponentName% works!</p>
