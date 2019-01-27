@@ -16,10 +16,11 @@
     "postversion": "git push && git push --tags"
   },
   "files": [
-    "lib/**/*"
+    "lib/**/*.js",
+    "lib/templates/component"
   ],
   "bin": {
-    "ngjs": "./lib/index.js"
+    "ngjs": "./lib/ngjs.js"
   },
   "repository": {
     "type": "git",
@@ -38,6 +39,7 @@
   "homepage": "https://github.com/GRHuizenga/AngularJS-Schematics#readme",
   "devDependencies": {
     "@types/jest": "^23.3.12",
+    "@types/node": "^10.12.18",
     "jest": "^23.6.0",
     "prettier": "^1.15.3",
     "ts-jest": "^23.10.5",
@@ -47,8 +49,15 @@
   },
   "dependencies": {
     "@types/commander": "^2.12.2",
+    "@types/figlet": "^1.2.0",
     "@types/shelljs": "^0.8.1",
+    "@types/underscore": "^1.8.9",
+    "chalk": "^2.4.2",
+    "clear": "^0.1.0",
     "commander": "^2.19.0",
-    "shelljs": "^0.8.3"
+    "figlet": "^1.2.1",
+    "path": "^0.12.7",
+    "shelljs": "^0.8.3",
+    "underscore": "^1.9.1"
   }
 }
