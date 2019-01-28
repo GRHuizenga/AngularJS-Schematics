@@ -10,15 +10,15 @@
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",
-    "prepublishOnly": "npm test && npm run lint",
+    "prepublishOnly": "npm run lint",
     "preversion": "npm run lint",
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags"
   },
   "files": [
     "dist/**/*.js",
-    "dist/templates/component.html",
-    "dist/templates/component.ts"
+    "src/templates/*",
+    "src/powershell/*"
   ],
   "bin": {
     "ngjs": "./dist/ngjs.js"
@@ -26,6 +26,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/GRHuizenga/AngularJS-Schematics.git"
+  },
+  "publishConfig": {
+    "registry": "http://build03:8081/repository/npm-internal/"
   },
   "keywords": [
     "AngularJS",

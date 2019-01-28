@@ -5,7 +5,7 @@ const program = require("commander");
 const env_dte_1 = require("./lib/env.dte");
 const file_1 = require("./lib/file");
 const underscore_1 = require("./lib/underscore");
-const templatesPath = `../assets/templates`;
+const templatesPath = `./templates`;
 const templateFiles = [`component.html`, `component.ts`];
 program
     .option('-p, --path <path>', 'Path to the folder in which to create the component, relative from solution root.')

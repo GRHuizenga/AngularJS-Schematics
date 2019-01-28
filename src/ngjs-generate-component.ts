@@ -5,7 +5,7 @@ import { addFilesToSolution } from './lib/env.dte';
 import { isDirectory, mkDir, readFile, writeFile } from './lib/file';
 import { replaceParameters } from './lib/underscore';
 
-const templatesPath: string = `../assets/templates`;
+const templatesPath: string = `./templates`;
 const templateFiles: string[] = [`component.html`, `component.ts`];
 
 program
